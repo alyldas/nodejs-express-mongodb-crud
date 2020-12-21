@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск</title>
+</head>
+
+<body>
+    <a href="/">На главную</a>
+    <h1>Найденные записи</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Имя клиента</td>
+                <td>Код клиента</td>
+                <td>Банк</td>
+                <td>Кредит</td>
+            </tr>
+        </thead>
+        <tbody>
+            <% cds.forEach(function(details) { %>
+                <tr>
+                    <td>
+                        <%= details.name %>
+                    </td>
+                    <td>
+                        <%= details.kodkl %>
+                    </td>
+                    <td>
+                        <%= details.bank %>
+                    </td>
+                    <td>
+                        <%= details.kredit %>
+                    </td>
+                    <td>
+                        <a href="/edit/<%= details._id %>">Изменить</a> |
+                        <a href="/delete/<%= details._id %>">Удалить</a>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление</title>
+</head>
+
+<body>
+    <a href="/">На главную</a>
+    <h1>Введите данные</h1>
+    <% cds.forEach(function(details) { %>
+        <form name="KlientForm" action="/edit/<%= details._id %>" method="post">
+            <label>Имя клиента</label><br>
+            <input type="text" value="<%= details.name %>" name="name" /><br><br>
+            <label>Код клиента</label><br>
+            <input type="number" value="<%= details.kodkl %>" name="kodkl" /><br><br>
+            <label>Банк</label><br>
+            <input type="text" value="<%= details.bank %>" name="bank" /><br><br>
+            <label>Кредит</label><br>
+            <input type="number" value="<%= details.kredit %>" name="kredit" /><br><br>
+            <button type="submit">Изменить</button>
+        </form>
+        <% }) %>
+</body>
+
+</html>

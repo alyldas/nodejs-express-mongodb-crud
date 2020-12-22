@@ -4,9 +4,10 @@ const app = express();
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const MongoClient = require("mongodb").MongoClient;
+const MongoClient = require('mongodb').MongoClient;
 const ObjectId = require('mongodb').ObjectID;
-const client = new MongoClient("mongodb://localhost:27017", { useNewUrlParser: true });
+const uri = "mongodb+srv://dbUser:dbPassword@cluster0.sktvc.mongodb.net/dbkli?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
 
 client.connect(err => {
     db = client.db("dbkli").collection("kli");

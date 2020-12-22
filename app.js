@@ -6,7 +6,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const MongoClient = require('mongodb').MongoClient;
 const ObjectId = require('mongodb').ObjectID;
-const uri = "mongodb+srv://dbUser:dbPassword@cluster0.sktvc.mongodb.net/dbkli?retryWrites=true&w=majority";
+const uri = "mongodb://dbUser:dbPassword@cluster0.sktvc.mongodb.net/dbkli?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 
 client.connect(err => {
